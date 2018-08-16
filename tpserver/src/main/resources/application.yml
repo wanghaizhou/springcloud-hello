@@ -1,0 +1,19 @@
+server:
+  port: 8511
+
+my:
+  name: whz
+  data: 2018-08-09
+  num: ${random.int}
+  uuid: ${random.uuid}
+
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
